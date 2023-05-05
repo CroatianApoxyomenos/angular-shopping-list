@@ -1,11 +1,11 @@
-# Laboratorul 6-7
+# Angular Shopping List
 
-Scrieti o aplicatie Angular pentru gestionarea unei liste de cumparaturi. Veti avea o entitate `Produs` cu campurile `id`, `denumire`, `cantitate`, `cumparatLaPretul` (poate fi gol).
+https://user-images.githubusercontent.com/107721907/236451745-61a2366b-189f-4927-853c-d00f34dd78aa.mp4
 
-Implementati functionalitatile:
-- Saptamana 6:  
+This is a Angular application for a shopping-list management. 
+
+## Implemented functionalities:  
   - CRUD  
-- Saptamana 7:  
-  - Filtrare dupa produse cumparate / necumparate. 
-  - Sortare produse dupa pretul total  
-  - Persistenta produselor dupa refresh. 
+  - Filter bought/ not bought products 
+  - Sort products by total price 
+  - Persistence after refresh (local storage) 
