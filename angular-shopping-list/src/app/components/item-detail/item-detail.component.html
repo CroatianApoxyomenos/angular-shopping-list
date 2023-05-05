@@ -1,0 +1,11 @@
+<button type="button" (click)="goBack()">Go back</button>
+<div *ngIf="item">
+  <h2>{{ item.name | uppercase }} Details</h2>
+  <div>
+    <label for="item-name">Product: </label>
+    <input id="item-name" [(ngModel)]="item.name" placeholder="name" />
+  </div>
+</div>
+<div *ngIf="!item">
+  <h3>Requested product doesn't exist</h3>
+</div>

@@ -1,0 +1,78 @@
+<div class="modal-header">
+  <h5 class="modal-title" id="exampleModalLabel">Product management</h5>
+  <button
+    type="button"
+    class="btn-close"
+    aria-label="Close"
+    onclick="location.href='/shopping-list'"
+  ></button>
+</div>
+<div class="modal-body">
+  <div *ngIf="showSuccessMessage" class="alert alert-success">
+    Product submitted successfully!
+  </div>
+
+  <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="name">Name:</label>
+      <input
+        type="text"
+        id="name"
+        class="form-control"
+        formControlName="name"
+        pattern="^[A-Za-z]{3,}$"
+        required
+      />
+      <span *ngIf="name && name.invalid && name.dirty" style="color: red"
+        >Name must be at least 3 characters long and contain only letters.</span
+      >
+    </div>
+
+    <div class="form-group">
+      <label for="quantity">Quantity:</label>
+      <input
+        type="number"
+        id="quantity"
+        class="form-control"
+        formControlName="quantity"
+        min="1"
+        required
+      />
+      <span
+        *ngIf="quantity && quantity.invalid && quantity.dirty"
+        style="color: red"
+        >Quantity must be at least 1.</span
+      >
+    </div>
+
+    <div class="form-group">
+      <label for="price">Price:</label>
+      <input
+        type="number"
+        id="price"
+        class="form-control"
+        formControlName="price"
+        min="1"
+        required
+      />
+      <span *ngIf="price && price.invalid && price.dirty" style="color: red"
+        >Price must be at least 1.</span
+      >
+    </div>
+
+    <button
+      type="submit"
+      class="btn btn-primary my-3"
+      [disabled]="myForm.invalid"
+    >
+      Submit
+    </button>
+    <button
+      type="button"
+      class="btn btn-secondary mx-3"
+      onclick="location.href='/shopping-list'"
+    >
+      Close
+    </button>
+  </form>
+</div>
